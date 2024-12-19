@@ -1,5 +1,4 @@
 import json
-
 from fastapi import FastAPI
 import uvicorn
 from fastapi.responses import HTMLResponse
@@ -8,10 +7,9 @@ from fastapi.staticfiles import StaticFiles
 from starlette.requests import Request
 import httpx
 # 导入路由
-
 from database.database import userNameRouter
-
-
+from config import Config
+config = Config()
 app = FastAPI()
 
 # create router
@@ -24,8 +22,8 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def read_root(request: Request):
     async with httpx.AsyncClient() as client:
         # 调用 /get_data 接口获取数据
-        response = await client.get("http://127.0.0.1:8000/api/searchAppdata/?qq=2027514529&secret=randomSecret")
-        reschart = await client.get("http://127.0.0.1:8000/api/top10appnames/?qq=2027514529")
+        response = await client.get(f"http://127.0.0.1:8000/api/searchAppdata/?qq={config.QQ}&secret={config.SECRET_KEY}")
+        reschart = await client.get(f"http://127.0.0.1:8000/api/top10appnames/?qq={config.QQ}")
         reschart = reschart.text
         reschart = json.loads(reschart)
 

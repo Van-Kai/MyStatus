@@ -5,7 +5,8 @@ path = pathlib.Path(__file__).parent.absolute()
 
 
 class Config:
-    SECRET_KEY = "123456"  # 暂时没用
+    QQ = "2027514529"
+    SECRET_KEY = "randomSecret"
     PATH = path
     sqlite_file_name = "database.db"
     DATABASE_PATH = path / "database"  # 在 BASE_PATH 下的 database 目录

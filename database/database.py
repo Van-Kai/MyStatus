@@ -37,6 +37,21 @@ engine = create_engine(sqlite_url, connect_args=connect_args)
 
 def create_db_and_tables():
     SQLModel.metadata.create_all(engine)
+    # 检查并插入固定数据
+    session = Session(engine)
+    try:
+        # 检查是否已有数据
+        existing_data = session.exec(select(UserTable).where(UserTable.QQ == config.QQ)).first()
+        if not existing_data:
+            # 如果没有，则插入固定数据
+            fixed_User_data = UserTable(UserName=config.QQ, PassWord=config.SECRET_KEY, QQ=config.QQ,Secret=config.SECRET_KEY)
+            session.add(fixed_User_data)
+            session.commit()
+            print("预设用户已插入")
+    except Exception as e:
+        print(f"插入预设用户时出错: {e}")
+    finally:
+        session.close()
 
 
 """创建会话依赖关系
