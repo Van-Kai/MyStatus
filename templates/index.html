@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="http://q1.qlogo.cn/g?b=qq&nk=2027514529&s=100" type="image/x-icon">
+    <title>{{name}} Alive？</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* 防止溢出 */
+        }
+
+        .frosted-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden; /* 防止溢出 */
+        }
+
+        .frosted-card h3, .frosted-card p {
+            margin: 10px 0;
+        }
+
+        canvas {
+            width: 100%; /* 让图表宽度填满卡片 */
+            max-width: 500px;
+            height: 800px; /* 增加高度，使柱状图更高 */
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: burlywood;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+     /* 媒体查询：对于小屏设备的样式 */
+    @media (max-width: 767px) {
+        .frosted-card {
+            padding: 20px;
+            width: 90%;
+            max-width: 90%;
+        }
+
+        .frosted-card h3 {
+            font-size: 1.3em;
+        }
+
+        .frosted-card p {
+            font-size: 1em;
+        }
+
+        canvas {
+            height: 300px; /* 增加手机上的柱状图高度 */
+        }
+    }
+
+    /* 媒体查询：对于非常小的设备（如手机竖屏） */
+    @media (max-width: 480px) {
+        .frosted-card {
+            width: 95%; /* 几乎占满整个屏幕 */
+            padding: 15px;
+        }
+
+        .frosted-card h3 {
+            font-size: 1.2em;
+        }
+
+        .frosted-card p {
+            font-size: 0.9em;
+        }
+
+        canvas {
+            height: 400px; /* 增加手机上的柱状图高度 */
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="frosted-card">
+        <h3><ruby>似<rt>sǐ</rt></ruby>😢了吗?</h3>
+        <p>这样女朋友就知道我不是故意不回复她了😎</p>
+        <p>{{name}}'s手机: <span style="color: #0dcaf0">{{appname}} (电量 {{batteryPower}}%)</span></p>
+        <p>{{name}}'s电脑: <span style="color: #373b3e">这个功能还没有写呢</span></p>
+        <p>数据更新时间: <span style="color: black">{{updateTime}}</span></p>
+        <p style="color: #b6d4fe; font-size: larger">目前设备上打开的应用，大概率在摸鱼。</p>
+
+        <!-- 手机前十使用应用频率排行榜图表 -->
+        <canvas id="usageChart"></canvas>
+
+        <a href="https://www.12131213.xyz" target="_blank" style="color: rgb(0, 0, 0);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="vertical-align: middle; width: 1em;">
+                <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z" />
+            </svg>
+            GitHub Repo 点我查看源码
+        </a>
+    </div>
+
+    <!-- Footer 部分 -->
+    <footer>
+        <p>&copy; 2024 Van-Kai. All rights reserved.</p>
+        <a href="http://beian.miit.gov.cn" target="_blank">豫ICP备2024094337号</a>
+    </footer>
+
+    <script>
+        // 图表数据
+        const appNames = {{ appName | tojson }};
+        const usageFrequency = {{ appcount | tojson }}; // 使用频率数据（示例）
+
+        // 图表初始化
+        const ctx = document.getElementById('usageChart').getContext('2d');
+        const usageChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: appNames,
+                datasets: [{
+                    label: '使用频率 (次)',
+                    data: usageFrequency,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true,
+                position: 'top',
+            },
+            tooltip: {
+                enabled: true // 显示悬浮提示信息
+            },
+            // 开启自定义插件
+            datalabels: false // 禁用 datalabels 插件，手动实现
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: '应用名称',
+                    color: '#fff',
+                    font: {
+                        size:0, // 设置字体大小 不显示
+                    }
+                    },
+                ticks: {
+                    color: '#fff'
+                },
+                // 旋转 x 轴标签
+                callback: function(value, index, values) {
+                    return value.split(" ").join("\n"); // 可以通过换行来更好地显示长标签
+                }
+            },
+
+
+            y: {
+                title: {
+                    display: true,
+                    text: '最近1000次App使用频率',
+                    color: '#fff',
+                   font: {
+                        size:10, // 设置字体大小
+                    }
+                },
+                ticks: {
+                    beginAtZero: true,
+                    color: '#fff'
+                }
+            }
+        },
+        animation: {
+            onComplete: () => {
+                const chartInstance = usageChart;
+                const ctx = chartInstance.ctx;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.font = '12px Arial';
+                ctx.fillStyle = '#fff'; // 设置数字颜色
+
+                chartInstance.data.datasets.forEach((dataset, i) => {
+                    const meta = chartInstance.getDatasetMeta(i);
+                    meta.data.forEach((bar, index) => {
+                        const data = dataset.data[index];
+                        ctx.fillText(data, bar.x, bar.y - 10); // 在柱状图上方显示数字
+                    });
+                });
+            }
+        }
+    }
+});
+</script>
+</body>
+</html>
