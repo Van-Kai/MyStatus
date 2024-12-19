@@ -28,8 +28,9 @@
 - [x] 待补充
 
 ## ✌️界面图片
-
-
+![](https://github.com/Van-Kai/MyStatus/blob/8b4d28a05999d398e9038242e1e1d470bcc10c4b/ReadmeSrc/ui1.jpg?raw=true)
+![](https://github.com/Van-Kai/MyStatus/blob/8b4d28a05999d398e9038242e1e1d470bcc10c4b/ReadmeSrc/ui2.jpg?raw=true)
 ## 😽灵感来源
 [哔哩哔哩：改了个能让各位实时视奸我的网站](https://www.bilibili.com/video/BV1fE421A7PE/?spm_id_from=333.1387.homepage.video_card.click)
+
 在此特别感谢
