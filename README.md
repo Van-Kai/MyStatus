@@ -30,7 +30,7 @@
 
 4、在图示位置输入您的QQ以及SECRET 这个配置至关重要 后续会用到 **请牢记** 
 
-![image-20241219235553431](C:\Users\fmk\AppData\Roaming\Typora\typora-user-images\image-20241219235553431.png)
+![1](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/1.png?raw=true)
 
 5、运行main文件即可
 
@@ -58,17 +58,17 @@
 
 11、点击箭头示例
 
-![75565fffc6ee3addef38f6e1b99fe3d9](C:\Users\fmk\Documents\Tencent Files\2027514529\nt_qq\nt_data\Pic\2024-12\Ori\75565fffc6ee3addef38f6e1b99fe3d9.jpeg)
+![2](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/2.jpeg?raw=true)
 
 点击配置
 
-![b772444080e7e907eddebd5817b2d6d2](C:\Users\fmk\Documents\Tencent Files\2027514529\nt_qq\nt_data\Pic\2024-12\Ori\b772444080e7e907eddebd5817b2d6d2.jpeg)
+![3](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/3.jpeg?raw=true)
 
-![0fea9837a6030b46ba684d94c22a2503](C:\Users\fmk\Documents\Tencent Files\2027514529\nt_qq\nt_data\Pic\2024-12\Ori\0fea9837a6030b46ba684d94c22a2503.jpeg)
+![4](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/4.jpeg?raw=true)
 
 接下来是重中之重
 
-> 修改https://status.12131213.xyz/api/putappdata?secret=randomSecret这个链接里面的secret为你第四步设置的secret https://status.12131213.xyz/这一部分请修改为你的公网地址，亦或是局域网地址 注意是**https还是http**
+> 修改 `https://status.12131213.xyz/api/putappdata?secret=randomSecret` 这个链接里面的secret为你第四步设置的secret `https://status.12131213.xyz/` 这一部分请修改为你的公网地址，亦或是局域网地址 注意是**https还是http**
 
 你会发现还有一个**息屏**配置项没有更改，重复以上操作即可
 
@@ -82,8 +82,9 @@
 - [x] 待补充
 
 ## ✌️界面图片
-![](https://github.com/Van-Kai/MyStatus/blob/8b4d28a05999d398e9038242e1e1d470bcc10c4b/ReadmeSrc/ui1.jpg?raw=true)
-![](https://github.com/Van-Kai/MyStatus/blob/8b4d28a05999d398e9038242e1e1d470bcc10c4b/ReadmeSrc/ui2.jpg?raw=true)
+![](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/ui1.jpg?raw=true)
+![](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/ui2.jpg?raw=true)
+
 ## 😽灵感来源
 [哔哩哔哩：改了个能让各位实时视奸我的网站]([改了个能让各位实时视奸我的网站_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1LjB9YjEi3/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&vd_source=b47e4ea7324766cf337912907843ffc9))
 
