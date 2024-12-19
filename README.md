@@ -86,7 +86,7 @@
 ![](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/ui2.jpg?raw=true)
 
 ## 😽灵感来源
-[哔哩哔哩：改了个能让各位实时视奸我的网站]([改了个能让各位实时视奸我的网站_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1LjB9YjEi3/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&vd_source=b47e4ea7324766cf337912907843ffc9))
+[哔哩哔哩：改了个能让各位实时视奸我的网站](https://www.bilibili.com/video/BV1LjB9YjEi3/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&vd_source=b47e4ea7324766cf337912907843ffc9)
 
 [哔哩哔哩：写了一个能让各位知道我睡没睡着的网页](https://www.bilibili.com/video/BV1fE421A7PE/?spm_id_from=333.1387.homepage.video_card.click)
 
