@@ -30,7 +30,7 @@
 
 4、在图示位置输入您的QQ以及SECRET 这个配置至关重要 后续会用到 **请牢记** 
 
-![1](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/1.png?raw=true)
+(<img src="https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/1.png?raw=true" width="210px">
 
 5、运行main文件即可
 
@@ -58,13 +58,12 @@
 
 11、点击箭头示例
 
-![2](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/2.jpeg?raw=true)
+<img src="https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/2.jpeg?raw=true" width="210px">
 
 点击配置
 
-![3](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/3.jpeg?raw=true)
-
-![4](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/4.jpeg?raw=true)
+<img src="https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/3.jpeg?raw=true" width="210px">
+<img src="https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/4.jpeg?raw=true" width="210px">
 
 接下来是重中之重
 
@@ -82,8 +81,8 @@
 - [x] 待补充
 
 ## ✌️界面图片
-![](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/ui1.jpg?raw=true)
-![](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/ui2.jpg?raw=true)
+<img src="https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/ui1.jpg?raw=true" width="800px">
+<img src="https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/ui2.jpg?raw=true" width="300px">
 
 ## 😽灵感来源
 [哔哩哔哩：改了个能让各位实时视奸我的网站](https://www.bilibili.com/video/BV1LjB9YjEi3/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&vd_source=b47e4ea7324766cf337912907843ffc9)
