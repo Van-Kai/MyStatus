@@ -30,7 +30,7 @@
 
 4、在图示位置输入您的QQ以及SECRET 这个配置至关重要 后续会用到 **请牢记** 
 
-(<img src="https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/1.png?raw=true" width="210px">
+(<img src="https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/1.png?raw=true" width="500px">
 
 5、运行main文件即可
 
