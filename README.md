@@ -58,7 +58,7 @@
 
 11、点击箭头示例
 
-![2](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/2.jpeg?raw=true)
+![2](https://github.com/Van-Kai/MyStatus/blob/master/ReadmeSrc/help/2.jpeg?raw=true=600x600)
 
 点击配置
 
